@@ -1,0 +1,92 @@
+[
+    {
+      "id": 0,
+      "name": "Cheese",
+      "quantity": 36,
+      "code_value": "a35394be-896e-448c-83cd-7de198798840",
+      "isPublished": true,
+      "expiration": "06/08/2019",
+      "price": 362.12
+    },
+    {
+      "id": 1,
+      "name": "Tomato",
+      "quantity": 36,
+      "code_value": "954c1ece-2d61-4275-87f9-ae5ee8ccaee1",
+      "isPublished": true,
+      "expiration": "14/02/2021",
+      "price": 359.25
+    },
+    {
+      "id": 2,
+      "name": "Carrot",
+      "quantity": 36,
+      "code_value": "25250957-0a5b-4e19-bbb9-ac9b32ac85e6",
+      "isPublished": false,
+      "expiration": "19/08/2018",
+      "price": 188.95
+    },
+    {
+      "id": 3,
+      "name": "Apple",
+      "quantity": 29,
+      "code_value": "b291743f-256c-499b-bda5-07df7b4166d0",
+      "isPublished": false,
+      "expiration": "13/03/2018",
+      "price": 380.77
+    },
+    {
+      "id": 4,
+      "name": "Chocolate",
+      "quantity": 33,
+      "code_value": "4dd5a58b-313c-4599-823f-c7d7eee4e6a2",
+      "isPublished": false,
+      "expiration": "23/05/2014",
+      "price": 151.79
+    },
+    {
+      "id": 5,
+      "name": "Orange",
+      "quantity": 31,
+      "code_value": "d3d5413f-cfde-4b46-a70e-f256b9280f6f",
+      "isPublished": false,
+      "expiration": "26/03/2014",
+      "price": 196.11
+    },
+    {
+      "id": 6,
+      "name": "IceCream",
+      "quantity": 24,
+      "code_value": "1984dce3-8e15-4722-87ab-148a590ad004",
+      "isPublished": false,
+      "expiration": "20/05/2018",
+      "price": 187.07
+    },
+    {
+      "id": 7,
+      "name": "Banana",
+      "quantity": 36,
+      "code_value": "39ea039e-9c60-46cc-b35d-8b6a17b7668f",
+      "isPublished": true,
+      "expiration": "30/05/2021",
+      "price": 327.07
+    },
+    {
+      "id": 8,
+      "name": "Pear",
+      "quantity": 35,
+      "code_value": "d0415b4c-970f-4261-8ee5-2e5aaeeff7aa",
+      "isPublished": false,
+      "expiration": "03/07/2017",
+      "price": 320.27
+    },
+    {
+      "id": 9,
+      "name": "Lettuce",
+      "quantity": 31,
+      "code_value": "06f071d3-adce-460d-b20c-a5ab745a411c",
+      "isPublished": false,
+      "expiration": "21/10/2014",
+      "price": 211.35
+    }
+  ]
