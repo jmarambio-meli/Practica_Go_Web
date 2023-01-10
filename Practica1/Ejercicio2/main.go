@@ -22,55 +22,57 @@ type Producto struct {
 var Productos []Producto
 
 func main() {
-
-	file, _ := ioutil.ReadFile("./db/db.json")
-
-	_ = json.Unmarshal([]byte(file), &Productos)
-
-	for i := 0; i < len(Productos); i++ {
-		fmt.Println("Product", Productos[i].Name)
-	}
+	cargarJson("./db/db.json")
 
 	router := gin.Default()
 
-	router.GET("/hello-world", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "Hello world",
-		})
-	})
+	router.GET("/ping", ping)
 
-	router.GET("/ping", func(c *gin.Context) {
-		c.String(200, "pong")
-	})
+	router.GET("/products", getProducts)
 
-	router.GET("/products", func(c *gin.Context) {
-		c.JSON(200, Productos)
-	})
+	router.GET("/products/:id", getProductById)
 
-	router.GET("/products/:id", func(c *gin.Context) {
-		for _, v := range Productos {
-			if strconv.Itoa(v.Id) == c.Param("id") {
-				c.JSON(200, v)
-			}
-		}
-		c.String(404, "Producto Inexistente")
-	})
-
-	router.GET("/products/search", func(c *gin.Context) {
-		valor := c.Query("valor")
-		s, err := strconv.ParseFloat(valor, 64)
-		if err != nil {
-			fmt.Println(err)
-		}
-		var productos []Producto
-		for _, v := range Productos {
-
-			if v.Price > s {
-				productos = append(productos, v)
-			}
-		}
-		c.JSON(200, productos)
-	})
+	router.GET("/products/search", getProductByFilter)
 
 	router.Run()
+}
+
+func cargarJson(url string) {
+	file, _ := ioutil.ReadFile(url)
+	_ = json.Unmarshal([]byte(file), &Productos)
+}
+
+func ping(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"message": "Pong",
+	})
+}
+
+func getProducts(c *gin.Context) {
+	c.JSON(200, Productos)
+}
+
+func getProductById(c *gin.Context) {
+	for _, v := range Productos {
+		if strconv.Itoa(v.Id) == c.Param("id") {
+			c.JSON(200, v)
+		}
+	}
+	c.String(404, "Producto Inexistente")
+}
+
+func getProductByFilter(c *gin.Context) {
+	valor := c.Query("valor")
+	s, err := strconv.ParseFloat(valor, 64)
+	if err != nil {
+		fmt.Println(err)
+	}
+	var productos []Producto
+	for _, v := range Productos {
+
+		if v.Price > s {
+			productos = append(productos, v)
+		}
+	}
+	c.JSON(200, productos)
 }

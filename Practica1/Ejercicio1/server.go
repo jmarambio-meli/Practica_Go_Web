@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -61,7 +62,7 @@ func main() {
 		fmt.Println(Persona)*/
 
 		// Add the new album to the slice.
-		c.String(200, fmt.Sprintf("Hola %s %s", Persona.Nombre, Persona.Apellido))
+		c.String(http.StatusAccepted, fmt.Sprintf("Hola %s %s", Persona.Nombre, Persona.Apellido))
 	})
 
 	router.Run()
